@@ -5,12 +5,12 @@ class StudentsController < ApplicationController
     end
 
     def grades
-        students = Student.all.order("grade DESC")
+        students = Student.all.order(grade: :desc)
         render json: students
     end
 
     def highest_grade
-        highest_grade = Student.all.order("grade DESC").first
+        highest_grade = Student.all.order(grade: :desc).first
         render json: highest_grade
     end
 
